@@ -1,0 +1,26 @@
+@import 'normalize.css';
+
+:root {
+    --colorPink: #fb2855;
+    --colorBlue: #2b5db9;
+    --colorWhite: #fff;
+    --colorBlack: #161823;
+    --colorIpt: #f1f1f2;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-style: 62.5%;
+}
+
+body {
+    font-style: 1.6rem;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
