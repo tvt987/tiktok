@@ -1,7 +1,7 @@
-1. Cài đặt thư viện create-react-app:
+1*. Cài đặt thư viện create-react-app:
     npx create-react-app tiktok
 
-2. Cài đặt customize-cra
+2*. Cài đặt customize-cra
     npm i react-app-rewired customize-cra -D
     Vào package.json thay đổi dependencies
         "start": "react-app start",
@@ -20,7 +20,7 @@
   
         module.exports = override();
         
-3. Cài đặt babel-plugin-module-resolver:
+3*. Cài đặt babel-plugin-module-resolver:
     npm install --save-dev babel-plugin-module-resolver
     Tạo file .babelrc có nội dung:
         {
@@ -45,7 +45,7 @@
                 }
             }
 
-4. Cấu hình prettier auto format while save file:
+4*. Cấu hình prettier auto format while save file:
     Tạo file .prettierrc có nội dung:
         {
             "arrowParens": "always",
@@ -72,11 +72,14 @@
             "editor.defaultFormatter": "esbenp.prettier-vscode"
         }
 
-5. Cấu hình css/sass
+5*. Cấu hình css/sass
     npm i -D sass
 
-6. Cấu hình router: 
+6*. Cấu hình router: 
     npm i react-router-dom
 
-7. Cài thư viện className: 
+7*. Cài thư viện className: 
     npm i classnames
+
+8. Cài thư viện tippy để sử dụng dropdown
+    npm i @tippyjs/react

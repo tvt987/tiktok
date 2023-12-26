@@ -5,7 +5,9 @@
     --colorBlue: #2b5db9;
     --colorWhite: #fff;
     --colorBlack: #161823;
-    --colorIpt: #f1f1f2;
+    --colorIpt: rgb(22 24 35 / 6%);
+    --colorGray: rgb(126, 126, 126);
+    --colorIconGray: rgb(167 167 171);
 }
 
 * {
@@ -23,4 +25,11 @@ body {
     font-weight: bold;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
 }
