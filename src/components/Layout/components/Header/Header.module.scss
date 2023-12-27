@@ -50,6 +50,10 @@
         border-color: rgba(61, 62, 67, 0.2);
     }
 }
+
+.search-result {
+    width: 500px;
+}
 .clear {
     position: absolute;
     top: 50%;
@@ -75,4 +79,10 @@
     &:hover {
         background-color: rgb(228 228 230);
     }
+}
+
+.title {
+    opacity: 0.6;
+    padding: 4px 8px;
+    font-style: 1.4rem;
 }

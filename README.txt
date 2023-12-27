@@ -81,5 +81,5 @@
 7*. Cài thư viện className: 
     npm i classnames
 
-8. Cài thư viện tippy để sử dụng dropdown
+8. Cài thư viện tippy để sử dụng dropdown and tooltips
     npm i @tippyjs/react
