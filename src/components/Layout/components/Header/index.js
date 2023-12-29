@@ -5,19 +5,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Wrapper as PopperWraper } from '~/components/Layout/components/Popper';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import AccountSearch from '~/components/Layout/components/AccountSearch';
+import Button from '~/components/Layout/components/Button';
 
 const cx = classNames.bind(styles);
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
+    const time = useRef(null);
     useEffect(() => {
-        setTimeout(() => {
-            setSearchResult(['Trương Văn Tình', 'Nguyễn Thị Kiều', 'Phan Văn Trị']);
+        const k = setTimeout(() => {
+            setSearchResult([]);
         }, 2000);
-    });
+        return () => clearTimeout(k);
+    }, []);
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -52,7 +55,11 @@ function Header() {
                         </Tippy>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}>{/* Content */}</div>
+                <div className={cx('actions')}>
+                    <Button state="outline" target="_blank">
+                        Follow
+                    </Button>
+                </div>
             </div>
         </header>
     );

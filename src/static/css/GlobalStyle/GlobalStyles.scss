@@ -17,7 +17,7 @@
 }
 
 html {
-    font-style: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
@@ -29,7 +29,9 @@ body {
 
 button,
 input,
+a,
 [tabindex] {
     outline: none;
     border: none;
+    text-decoration: none;
 }
