@@ -1,6 +1,5 @@
 .wrapper {
     --border-radius-input: 92px;
-
     background-color: var(--colorWhite);
     height: 60px;
     padding: 0 24px 0 16px;
@@ -17,6 +16,7 @@
 }
 
 .logo {
+    width: 118px;
 }
 .search {
     border-radius: var(--border-radius-input);
@@ -31,7 +31,7 @@
 
     input {
         flex: 1;
-        font-size: 1rem;
+        font-size: 1.6rem;
         background-color: transparent;
         color: var(--colorBlack);
     }
@@ -53,6 +53,7 @@
 
 .search-result {
     width: 500px;
+    font-size: 1.6rem;
 }
 .clear {
     position: absolute;
@@ -85,4 +86,10 @@
     opacity: 0.6;
     padding: 4px 8px;
     font-style: 1.4rem;
+}
+
+.actions {
+    min-width: 220px;
+    display: flex;
+    justify-content: space-between;
 }
