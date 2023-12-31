@@ -4,24 +4,32 @@
     align-items: center;
     justify-content: center;
     padding: 6px 8px;
-    cursor: pointer;
-}
-
-.primary {
-    border-radius: 4px;
-    font-weight: 700;
-    min-height: 36px;
     font-size: 1.6rem;
-    line-height: 21px;
-    min-width: 100px;
-    background-color: rgb(254, 44, 85);
-    border: 1px solid transparent;
+    cursor: pointer;
+
+    svg {
+        margin-right: 8px;
+    }
+
+    // & + .wrapper {
+    //     margin-left: 8px;
+    // }
 
     &:hover {
         animation: changeColor 0.5s ease infinite;
         color: rgb(0, 17, 255);
         border-color: rgb(0, 17, 255);
     }
+}
+
+.primary {
+    border-radius: 4px;
+    font-weight: 700;
+    min-height: 36px;
+    line-height: 21px;
+    min-width: 100px;
+    background-color: rgb(254, 44, 85);
+    border: 1px solid transparent;
 }
 
 .disible {
@@ -29,22 +37,58 @@
     background-color: rgba(0, 0, 0, 0.176);
 }
 
-.outline {
+.outline-small {
     min-width: 96px;
     height: 36px;
     border: 1px solid rgb(254, 44, 85);
     color: rgb(254, 44, 85);
-    border-radius: 2px;
+    border-radius: 4px;
     font-weight: 550;
-    font-size: 1.6rem;
     background-color: var(--colorWhite);
-    &:hover {
-        animation: changeColor 0.5s ease infinite;
-        color: rgb(0, 17, 255);
-        border-color: rgb(0, 17, 255);
-    }
 }
 
+.blank {
+    min-width: 110px;
+    height: 36px;
+    border: 1px solid rgb(209, 207, 207);
+    color: var(--colorBlack);
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 1.6rem;
+    background-color: var(--colorWhite);
+}
+
+.outline-large {
+    border: 1px solid rgb(254, 44, 85);
+    color: rgb(254, 44, 85);
+    border-radius: 4px;
+    background-color: var(--colorWhite);
+    font-size: 1.8rem;
+    min-width: 168px;
+    min-height: 48px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.create-effect {
+    background-image: url('https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok/webapp/main/webapp-desktop/045b2fc7c278b9a30dd0.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 52px;
+    min-width: 168px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    width: 100%;
+    color: var(--colorBlack);
+    &:hover {
+        font-size: 1.8rem;
+        transition: all 0.3s ease;
+        animation: none;
+        color: var(--colorBlack);
+    }
+}
 @keyframes changeColor {
     // 0% {
     //     background: linear-gradient(to right, #99c2ff, #ff99cc, #ffff99, #99ff99, #ffb366, #d9a3e0);

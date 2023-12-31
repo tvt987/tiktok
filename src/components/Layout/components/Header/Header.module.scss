@@ -1,6 +1,5 @@
 .wrapper {
     --border-radius-input: 92px;
-
     background-color: var(--colorWhite);
     height: 60px;
     padding: 0 24px 0 16px;
@@ -17,6 +16,7 @@
 }
 
 .logo {
+    width: 118px;
 }
 .search {
     border-radius: var(--border-radius-input);
@@ -86,4 +86,10 @@
     opacity: 0.6;
     padding: 4px 8px;
     font-style: 1.4rem;
+}
+
+.actions {
+    min-width: 220px;
+    display: flex;
+    justify-content: space-between;
 }
