@@ -44,7 +44,7 @@
     color: rgb(254, 44, 85);
     border-radius: 4px;
     font-weight: 550;
-    background-color: var(--colorWhite);
+    // background-color: var(--colorWhite);
 }
 
 .blank {
@@ -87,6 +87,22 @@
         transition: all 0.3s ease;
         animation: none;
         color: var(--colorBlack);
+    }
+}
+
+.float {
+    border-radius: 999px;
+    min-width: 100px;
+    background-color: var(--colorWhite);
+    color: black;
+    border: 1px solid gray;
+    font-weight: 500;
+    height: 36px;
+    width: 100%;
+
+    &:hover {
+        color: red;
+        border-color: red;
     }
 }
 @keyframes changeColor {

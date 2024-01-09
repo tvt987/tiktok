@@ -1,0 +1,69 @@
+//10 8 10 16
+
+.container {
+    min-height: 290px;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+    height: 41px;
+}
+
+.link {
+    font-size: 1.6rem;
+    background-color: var(--colorWhite);
+    width: 100%;
+    height: 44px !important;
+
+    padding: 10px 8px 10px 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    &:hover {
+        background-color: rgba(0, 38, 255, 0.063);
+    }
+}
+
+.icon {
+    padding-right: 8px;
+    color: var(--colorBlack);
+}
+
+.name {
+    color: var(--colorBlack);
+}
+
+.last {
+    height: 44px;
+}
+
+.button {
+    cursor: pointer;
+    width: 44px;
+    background-color: rgba(22, 24, 35, 0.12);
+    border-radius: 999px;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    position: absolute;
+    right: 8px;
+}
+
+.dot {
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+}
+
+.darkLight {
+    background-color: rgb(11, 224, 155);
+
+    .dot {
+        transform: translateX(100%);
+    }
+}
