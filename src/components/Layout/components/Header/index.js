@@ -10,116 +10,10 @@ import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import AccountSearch from '~/components/Layout/components/AccountSearch';
 import Button from '~/components/Layout/components/Button';
-import { faCircleQuestion, faKeyboard, faLightbulb, faMoon } from '@fortawesome/free-regular-svg-icons';
 import Menu from '~/components/Layout/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
 function Header() {
-    const menuItems = [
-        {
-            id: 1,
-            icon: faLightbulb,
-            name: 'Trung tâm nhà sáng tạo LIVE',
-            to: '/upload',
-        },
-        {
-            id: 2,
-            icon: faLanguage,
-            name: 'Tiếng Việt',
-            onClick: () => {
-                // ở đây
-            },
-            children: {
-                title: 'Language',
-                data: [
-                    {
-                        id: 1,
-                        name: 'English',
-                    },
-                    {
-                        id: 2,
-                        name: 'China',
-                        children: {
-                            title: 'China',
-                            data: [
-                                {
-                                    id: 1,
-                                    icon: faLanguage,
-                                    name: 'Tokyo',
-                                },
-                                {
-                                    id: 2,
-                                    icon: faLanguage,
-                                    name: 'Motion',
-                                },
-                                {
-                                    id: 3,
-                                    icon: faLanguage,
-                                    name: 'HardWai',
-                                },
-                                {
-                                    id: 4,
-                                    icon: faLanguage,
-                                    name: 'Tokey',
-                                },
-                            ],
-                        },
-                    },
-                    {
-                        id: 3,
-                        icon: faLanguage,
-                        name: 'Spanish',
-                    },
-                    {
-                        id: 4,
-                        icon: faLanguage,
-                        name: 'German',
-                    },
-                ],
-            },
-        },
-        {
-            id: 3,
-            icon: faCircleQuestion,
-            name: 'Phản hồi và trợ giúp',
-            children: {
-                title: 'Language',
-                data: [
-                    {
-                        id: 1,
-                        icon: faLanguage,
-                        name: 'English',
-                    },
-                    {
-                        id: 2,
-                        icon: faLanguage,
-                        name: 'China',
-                    },
-                    {
-                        id: 3,
-                        icon: faLanguage,
-                        name: 'Spanish',
-                    },
-                    {
-                        id: 4,
-                        icon: faLanguage,
-                        name: 'German',
-                    },
-                ],
-            },
-        },
-        {
-            id: 4,
-            icon: faKeyboard,
-            name: 'Phím tắt trên bàn phím',
-        },
-        {
-            id: 5,
-            icon: faMoon,
-            name: 'Chế độ tối',
-            last: 'last',
-        },
-    ];
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
         const k = setTimeout(() => {
@@ -173,26 +67,9 @@ function Header() {
                         src="https://img.icons8.com/pulsar-color/48/laptop-and-phone.png"
                         alt="laptop-and-phone"
                     />
-                    <div>
-                        <Tippy
-                            placement="bottom-end"
-                            interactive={true}
-                            render={(attrs) => (
-                                <div className={cx('menu')} tabIndex={-1} {...attrs}>
-                                    <PopperWraper>
-                                        <Menu items={menuItems}></Menu>
-                                    </PopperWraper>
-                                </div>
-                            )}
-                        >
-                            <div>
-                                <FontAwesomeIcon
-                                    className={cx('dot-vertical')}
-                                    icon={faEllipsisVertical}
-                                ></FontAwesomeIcon>
-                            </div>
-                        </Tippy>
-                    </div>
+                    <Menu>
+                        <FontAwesomeIcon className={cx('dot-vertical')} icon={faEllipsisVertical}></FontAwesomeIcon>
+                    </Menu>
                 </div>
                 <div className={cx('float')}>
                     <Button state="float">Go to top</Button>
