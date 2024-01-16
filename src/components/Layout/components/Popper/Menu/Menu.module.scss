@@ -67,3 +67,11 @@
         transform: translateX(100%);
     }
 }
+
+.menu {
+    transform: translate(5%, -6%);
+    min-width: 270px;
+    min-height: 208px;
+    list-style-type: none;
+    padding: 0;
+}
