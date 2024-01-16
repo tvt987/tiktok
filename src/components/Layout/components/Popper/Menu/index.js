@@ -124,7 +124,6 @@ function Menu({ children }) {
     const [lastItem, setLastItem] = useState(history[history.length - 1]);
 
     const handleMenu = (children) => {
-        alert('b');
         if (children) {
             history.push(children.data);
             title.push(children.title);
@@ -145,7 +144,6 @@ function Menu({ children }) {
     let classNamesBtn = cx('button');
 
     const handleEfcDarkLight = () => {
-        alert('a');
         const button = document.querySelector(`.${styles.button}`);
         button.classList.toggle(styles.darkLight);
     };

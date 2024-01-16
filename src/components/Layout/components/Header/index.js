@@ -2,18 +2,19 @@ import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import images from '~/static/images/Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faEllipsisVertical, faLanguage, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Wrapper as PopperWraper } from '~/components/Layout/components/Popper';
-import { useEffect, useRef, useState } from 'react';
-import Tippy from '@tippyjs/react/headless';
+import { useEffect, useState } from 'react';
+import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import AccountSearch from '~/components/Layout/components/AccountSearch';
 import Button from '~/components/Layout/components/Button';
-import Menu from '~/components/Layout/components/Popper/Menu';
+import HeadAction from '../HeadAction';
 
 const cx = classNames.bind(styles);
 function Header() {
+    let currentUser = 's';
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
         const k = setTimeout(() => {
@@ -48,29 +49,14 @@ function Header() {
                         </button>
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
                         {/* icon loading */}
-                        <Tippy>
-                            <button content="Search" placement="top" className={cx('search-btn')}>
+                        <Tippy content="Search">
+                            <button className={cx('search-btn')}>
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </button>
                         </Tippy>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}>
-                    <Button state="blank" target="_blank">
-                        <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon> Upload
-                    </Button>
-                    <Button state="primary" target="_blank">
-                        Log in
-                    </Button>
-                    <img
-                        className={cx('laptop-mobile')}
-                        src="https://img.icons8.com/pulsar-color/48/laptop-and-phone.png"
-                        alt="laptop-and-phone"
-                    />
-                    <Menu>
-                        <FontAwesomeIcon className={cx('dot-vertical')} icon={faEllipsisVertical}></FontAwesomeIcon>
-                    </Menu>
-                </div>
+                <HeadAction currentUser={currentUser}></HeadAction>
                 <div className={cx('float')}>
                     <Button state="float">Go to top</Button>
                 </div>

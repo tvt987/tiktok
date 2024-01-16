@@ -8,6 +8,7 @@
     --colorIpt: rgb(22 24 35 / 6%);
     --colorGray: rgb(126, 126, 126);
     --colorIconGray: rgb(167 167 171);
+    --colorContentTippy: rgba(84, 84, 84, 0.92);
 }
 
 * {
@@ -25,6 +26,21 @@ body {
     font-weight: bold;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body .tippy-box {
+    background-color: var(--colorContentTippy);
+}
+
+body .tippy-content {
+    font-size: 1.6rem;
+    border-radius: 8px;
+    padding: 8px;
+    font-weight: 600;
+}
+
+body .tippy-arrow {
+    color: var(--colorContentTippy);
 }
 
 button,
