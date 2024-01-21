@@ -13,7 +13,7 @@
 }
 
 .icons {
-    min-width: 220px;
+    min-width: 268px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,4 +33,27 @@
 .laptop-mobile {
     width: 33px;
     height: 33px;
+}
+
+.user-avatar {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+}
+
+.number-chat {
+    min-width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    padding: 0 4px;
+    left: 24px;
+    color: var(--colorWhite);
+    background-color: rgb(251, 58, 97);
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }

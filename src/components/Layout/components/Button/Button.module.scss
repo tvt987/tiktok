@@ -6,6 +6,8 @@
     padding: 6px 8px;
     font-size: 1.6rem;
     cursor: pointer;
+    position: relative;
+    font-family: TikTokFontRegular, sans-serif;
 
     svg {
         margin-right: 8px;
@@ -53,7 +55,7 @@
     border: 1px solid rgb(209, 207, 207);
     color: var(--colorBlack);
     border-radius: 2px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.6rem;
     background-color: var(--colorWhite);
 }
@@ -116,6 +118,7 @@
     padding: 8px;
     background-color: var(--colorWhite);
 }
+
 @keyframes changeColor {
     // 0% {
     //     background: linear-gradient(to right, #99c2ff, #ff99cc, #ffff99, #99ff99, #ffb366, #d9a3e0);

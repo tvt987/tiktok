@@ -3,3 +3,16 @@
     text-align: center;
     margin-right: 0 !important;
 }
+
+.mailbox {
+    position: relative;
+}
+
+.favorite,
+.view-profile,
+.settings,
+.live-studio,
+.get-coins {
+    margin-right: 8px;
+    font-weight: bold;
+}

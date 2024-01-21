@@ -11,6 +11,28 @@
     --colorContentTippy: rgba(84, 84, 84, 0.92);
 }
 
+// Fonts embedded
+@font-face {
+    font-family: TikTokDisplayFont;
+    src: url('../../fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: TikTokFontBold;
+    src: url('../../fonts/TikTokFont-Bold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: TikTokFontSemibold;
+    src: url('../../fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: TikTokFontRegular;
+    src: url('../../fonts/TikTokFont-Regular.woff2');
+    font-weight: 500;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -23,8 +45,8 @@ html {
 
 body {
     font-style: 1.6rem;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: TikTokDisplayFont, sans-serif;
+
     // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
