@@ -16,3 +16,28 @@
     margin-right: 8px;
     font-weight: bold;
 }
+
+.clear,
+.load {
+    position: absolute;
+    top: 50%;
+    right: 68px;
+    color: rgba(22, 24, 35, 0.34);
+    width: 20px;
+    height: 20px;
+    color: red;
+    transform: translateY(-50%);
+}
+
+.load {
+    animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}

@@ -18,7 +18,7 @@ import {
 } from '~/static/icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import Image from '../Image';
+import Image from '../Images';
 
 const cx = classNames.bind(styles);
 function HeadAction({ currentUser }) {
@@ -228,11 +228,7 @@ function HeadAction({ currentUser }) {
                         </Button>
                     </Tippy>
                     <Menu items={itemsUser}>
-                        <Image
-                            src="htstps://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/078e2b2b06e21bf36e18df9fb4599150.jpeg?lk3s=a5d48078&x-expires=1705762800&x-signature=28XXz6L15BzCXxQSgRoWbQQ54QM%3D"
-                            alt="Trương Văn Tình"
-                            className={cx('user-avatar')}
-                        />
+                        <Image src="link" alt="Trương Văn Tình" className={cx('user-avatar')} />
                     </Menu>
                 </div>
             ) : (

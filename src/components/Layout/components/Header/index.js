@@ -5,7 +5,7 @@ import images from '~/static/images/Logo';
 import Button from '~/components/Layout/components/Button';
 import HeadAction from '../HeadAction';
 import Search from '../Search';
-import Image from '../Image';
+import Image from '../Images';
 
 const cx = classNames.bind(styles);
 function Header() {
