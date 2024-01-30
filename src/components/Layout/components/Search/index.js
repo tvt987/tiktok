@@ -9,6 +9,7 @@ import { Wrapper as PopperWraper } from '~/components/Layout/components/Popper';
 import { ClearIcon, LoadIcon } from '~/static/icons';
 import styles from './Search.module.scss';
 import React from 'react';
+import useDebounce from '~/static/hooks';
 
 const cx = classNames.bind(styles);
 function Search() {
@@ -19,8 +20,10 @@ function Search() {
     const inputRef = useRef();
     const resultRef = useRef();
 
+    const debounceValue = useDebounce(searchValue, 1000);
+
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!debounceValue.trim()) {
             setSearchResult([]);
             if (resultRef.current) {
                 resultRef.current.style.display = 'none';
@@ -28,14 +31,14 @@ function Search() {
             return;
         } else {
             setLoading(true);
-            fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+            fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounceValue)}&type=less`)
                 .then((response) => response.json())
                 .then((data) => {
                     setSearchResult(data.data);
                     setLoading(false);
                 });
         }
-    }, [searchValue]);
+    }, [debounceValue]);
     const handleClear = () => {
         setSearchValue('');
         inputRef.current.focus();
@@ -63,7 +66,9 @@ function Search() {
                         <PopperWraper>
                             <div className={cx('title')}>Account</div>
                             {searchResult &&
-                                searchResult.map((item) => <AccountSearch key={item.id} item={item}></AccountSearch>)}
+                                searchResult.map((item) => (
+                                    <AccountSearch to={item.nickname} key={item.id} item={item}></AccountSearch>
+                                ))}
                         </PopperWraper>
                     </div>
                 )}

@@ -25,12 +25,11 @@
     color: rgba(22, 24, 35, 0.34);
     width: 20px;
     height: 20px;
-    color: red;
     transform: translateY(-50%);
 }
 
 .load {
-    animation: loading 1s linear infinite;
+    animation: loading 0.5s linear infinite;
 }
 
 @keyframes loading {
