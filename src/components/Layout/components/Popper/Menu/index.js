@@ -43,6 +43,7 @@ function Menu({ items, children }) {
     return (
         <Tippy
             placement="bottom-end"
+            trigger="click"
             interactive={true}
             onHide={() => {
                 setHistory([items]);
@@ -54,39 +55,41 @@ function Menu({ items, children }) {
                     <PopperWraper>
                         <ul>
                             <Header title={title} onBack={() => handleBack()} />
-                            {lastItem &&
-                                lastItem.map((item, index) => {
-                                    classNames = cx('wrapper', {
-                                        [item.last]: [item.last],
-                                    });
-                                    return (
-                                        <li key={index} className={classNames}>
-                                            <Button
-                                                className={cx('link')}
-                                                onClick={
-                                                    item.last
-                                                        ? () => handleEfcDarkLight()
-                                                        : () => handleMenu(item.children)
-                                                }
-                                                to={item.to}
-                                                href={item.href}
-                                            >
-                                                {item.icon ? item.icon : <Fragment></Fragment>}
-                                                <div className={cx('name')}>{item.name}</div>
-                                                {item.last ? (
-                                                    <div className={classNamesBtn}>
-                                                        <FontAwesomeIcon
-                                                            className={cx('dot')}
-                                                            icon={faCircle}
-                                                        ></FontAwesomeIcon>
-                                                    </div>
-                                                ) : (
-                                                    <div></div>
-                                                )}
-                                            </Button>
-                                        </li>
-                                    );
-                                })}
+                            <div className={cx('menu-body')}>
+                                {lastItem &&
+                                    lastItem.map((item, index) => {
+                                        classNames = cx('wrapper', {
+                                            [item.last]: [item.last],
+                                        });
+                                        return (
+                                            <li key={index} className={classNames}>
+                                                <Button
+                                                    className={cx('link')}
+                                                    onClick={
+                                                        item.last
+                                                            ? () => handleEfcDarkLight()
+                                                            : () => handleMenu(item.children)
+                                                    }
+                                                    to={item.to}
+                                                    href={item.href}
+                                                >
+                                                    {item.icon ? item.icon : <Fragment></Fragment>}
+                                                    <div className={cx('name')}>{item.name}</div>
+                                                    {item.last ? (
+                                                        <div className={classNamesBtn}>
+                                                            <FontAwesomeIcon
+                                                                className={cx('dot')}
+                                                                icon={faCircle}
+                                                            ></FontAwesomeIcon>
+                                                        </div>
+                                                    ) : (
+                                                        <div></div>
+                                                    )}
+                                                </Button>
+                                            </li>
+                                        );
+                                    })}
+                            </div>
                         </ul>
                     </PopperWraper>
                 </div>

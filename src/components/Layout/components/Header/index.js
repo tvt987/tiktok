@@ -14,9 +14,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Button to="/" className={cx('logo')}>
                     <Image src={images.logo.default} alt="" />
-                </div>
+                </Button>
                 <Search />
                 <HeadAction currentUser={currentUser}></HeadAction>
                 <div className={cx('float')}>

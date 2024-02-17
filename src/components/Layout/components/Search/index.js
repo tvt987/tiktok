@@ -10,6 +10,8 @@ import { ClearIcon, LoadIcon } from '~/static/icons';
 import styles from './Search.module.scss';
 import React from 'react';
 import useDebounce from '~/static/hooks';
+import axios from 'axios';
+import * as instance from '~/utils/request';
 
 const cx = classNames.bind(styles);
 function Search() {
@@ -31,12 +33,26 @@ function Search() {
             return;
         } else {
             setLoading(true);
-            fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounceValue)}&type=less`)
-                .then((response) => response.json())
-                .then((data) => {
-                    setSearchResult(data.data);
+            const fetchApi = async () => {
+                try {
+                    const res = await instance.get('users/search', {
+                        params: {
+                            q: debounceValue,
+                            type: 'less',
+                        },
+                    });
+                    if (resultRef.current) {
+                        resultRef.current.style.display = 'block';
+                    }
+                    setSearchResult(res.data);
+                    console.log(res.data);
                     setLoading(false);
-                });
+                } catch (error) {
+                    setSearchResult([]);
+                    setLoading(false);
+                }
+            };
+            fetchApi();
         }
     }, [debounceValue]);
     const handleClear = () => {
@@ -96,7 +112,7 @@ function Search() {
 
                     {/* icon loading */}
                     <Tippy content="Search">
-                        <button className={cx('search-btn')}>
+                        <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                             <FontAwesomeIcon className={cx('search-btn--icon')} icon={faMagnifyingGlass} />
                         </button>
                     </Tippy>
