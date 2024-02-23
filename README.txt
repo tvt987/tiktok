@@ -83,3 +83,9 @@
 
 8. Cài thư viện tippy để sử dụng dropdown and tooltips
     npm i @tippyjs/react
+
+
+Local/Development
+Test/Staging
+UAT
+Production 
